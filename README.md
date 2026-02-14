@@ -4,7 +4,18 @@
   <img src="assets/icon128.png" alt="GitLab Copy Path Extension" width="128" height="128">
 </p>
 
-A Chrome extension that adds a "Copy Path" button to file headers in GitLab merge request diffs.
+## Calling all monorepo lovers!
+
+We all love our monorepo… but let's be honest — GitLab's absolute paths in MRs can be a little painful.
+
+Usually, we're working inside a specific repo, like `services/x`, but when we copy paths from GitLab MR, we get the full absolute path. That means:
+- Copy-paste fails 
+- Extra editing to remove the `services/x` prefix 
+- Reviewing + quick fixes = painful 
+
+After suffering through this myself, I decided: **enough is enough!** I made a tiny Chrome extension to magically turn absolute paths into relative paths, making reviews and fixes a breeze.
+
+Say goodbye to path frustration and hello to faster reviews!
 
 ## Features
 
