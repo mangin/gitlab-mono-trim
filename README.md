@@ -1,4 +1,4 @@
-# GitLab MonoTrim 
+# GitLab MonoTrim Chrome Extension
 
 <p align="center">
   <img src="assets/icon128.png" alt="GitLab Copy Path Extension" width="128" height="128">
