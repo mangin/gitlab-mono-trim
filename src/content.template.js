@@ -1,10 +1,30 @@
-// Function to process file path
-function processFilePath(filePath) {
-  // Remove "service/x/" prefix if it exists at the beginning
-  if (filePath.startsWith('services/x/')) {
-    return filePath.replace(/^services\/x\//, '');
+// Function to process file path using configured patterns
+async function processFilePath(filePath) {
+  try {
+    // Hardcoded pattern from build configuration
+    const patterns = [
+      { pattern: '{{DEFAULT_PATTERN}}', enabled: true }
+    ];
+    
+    for (const config of patterns) {
+      if (!config.enabled) continue;
+      
+      try {
+        const regex = new RegExp(config.pattern);
+        if (regex.test(filePath)) {
+          return filePath.replace(regex, '');
+        }
+      } catch (error) {
+        console.error(`Invalid regex pattern: ${config.pattern}`, error);
+      }
+    }
+    
+    // Return original path if no pattern matched
+    return filePath;
+  } catch (error) {
+    console.error('Error processing file path:', error);
+    return filePath;
   }
-  return '';
 }
 
 // Function to copy text to clipboard
@@ -17,12 +37,19 @@ function copyToClipboard(text) {
 }
 
 // Function to create and add copy button
-function addCopyButton(fileHeader) {
+async function addCopyButton(fileHeader) {
   // Check if button already exists
-  console.log('Checking file header for copy button:', fileHeader);
   if (fileHeader.querySelector('.gitlab-copy-path-btn')) {
+    console.log('Button already exists, skipping:', fileHeader);
     return;
   }
+  
+  // Mark this header as processed to prevent race conditions
+  if (fileHeader.dataset.copyButtonProcessed === 'true') {
+    return;
+  }
+  fileHeader.dataset.copyButtonProcessed = 'true';
+  
   console.log('Adding copy button to file header:', fileHeader);
 
   // Get the file path from .file-title-name
@@ -33,7 +60,7 @@ function addCopyButton(fileHeader) {
   console.log('Found file title element:', fileTitleElement);
 
   const filePath = fileTitleElement.textContent.trim();
-  const processedPath = processFilePath(filePath);
+  const processedPath = await processFilePath(filePath);
 
   // Only add button if there's content to copy
   if (processedPath === '') {
@@ -44,8 +71,14 @@ function addCopyButton(fileHeader) {
   // Create the copy button
   const copyButton = document.createElement('button');
   copyButton.className = 'gitlab-copy-path-btn';
-  copyButton.textContent = 'Copy Path';
   copyButton.title = `Copy: ${processedPath}`;
+  
+  // Add icon
+  const icon = document.createElement('img');
+  icon.src = chrome.runtime.getURL('assets/copy.svg');
+  icon.alt = 'Copy';
+  icon.className = 'copy-icon';
+  copyButton.appendChild(icon);
 
   // Add click handler
   copyButton.addEventListener('click', (e) => {
@@ -54,12 +87,9 @@ function addCopyButton(fileHeader) {
     copyToClipboard(processedPath);
     
     // Visual feedback
-    const originalText = copyButton.textContent;
-    copyButton.textContent = 'Copied!';
     copyButton.classList.add('copied');
     
     setTimeout(() => {
-      copyButton.textContent = originalText;
       copyButton.classList.remove('copied');
     }, 2000);
   });
@@ -70,21 +100,30 @@ function addCopyButton(fileHeader) {
 }
 
 // Function to process all file headers
-function processFileHeaders() {
+async function processFileHeaders() {
   const fileHeaders = document.querySelectorAll('.file-header-content');
   console.log('Processing file headers:', fileHeaders.length);
-  fileHeaders.forEach(fileHeader => {
-    addCopyButton(fileHeader);
-  });
+  for (const fileHeader of fileHeaders) {
+    await addCopyButton(fileHeader);
+  }
 }
 
 // Initial processing
 processFileHeaders();
 
+// Debounce function to prevent excessive calls
+let debounceTimer;
+function debounce(func, delay) {
+  return function() {
+    clearTimeout(debounceTimer);
+    debounceTimer = setTimeout(func, delay);
+  };
+}
+
 // Watch for dynamically added file headers
-const observer = new MutationObserver((mutations) => {
+const observer = new MutationObserver(debounce(() => {
   processFileHeaders();
-});
+}, 300)); // Wait 300ms after last change before processing
 
 // Start observing the document for changes
 observer.observe(document.body, {

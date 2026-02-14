@@ -9,13 +9,13 @@
   "web_accessible_resources": [
     {
       "resources": ["assets/copy.svg"],
-      "matches": ["*://gitlab.internal.tripleten.com/*"]
+      "matches": ["*://{{GITLAB_DOMAIN}}/*"]
     }
   ],
   "content_scripts": [
     {
       "matches": [
-        "*://gitlab.internal.tripleten.com/*/merge_requests/*/diffs*"
+        "*://{{GITLAB_DOMAIN}}/*/merge_requests/*/diffs*"
       ],
       "js": ["src/content.js"],
       "css": ["src/styles.css"],

@@ -1,0 +1,22 @@
+<svg id='Copy_24' width='24' height='24' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'><rect width='24' height='24' stroke='none' fill='#000000' opacity='0'/>
+
+
+<g transform="matrix(0.31 0 0 0.31 12 12)" >
+<g style="" >
+<g transform="matrix(1 0 0 1 16.5 -20.5)" >
+<linearGradient id="SVGID_LyRnpK~TWeMn~6rLY~ahva_1" gradientUnits="userSpaceOnUse" gradientTransform="matrix(-0.5 0 0 1 73.5 0)" x1="50" y1="7" x2="50" y2="16">
+<stop offset="0%" style="stop-color:rgb(109,199,255);stop-opacity: 1"/>
+<stop offset="100%" style="stop-color:rgb(230,171,255);stop-opacity: 1"/>
+</linearGradient>
+<path style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-dashoffset: 0; stroke-linejoin: miter; stroke-miterlimit: 4; fill: url(#SVGID_LyRnpK~TWeMn~6rLY~ahva_1); fill-rule: nonzero; opacity: 1;" transform=" translate(-48.5, -11.5)" d="M 44 7 L 44 15.1 C 44 15.597 44.403 16 44.9 16 L 53 16 L 44 7 z" stroke-linecap="round" />
+</g>
+<g transform="matrix(1 0 0 1 0 0)" >
+<linearGradient id="SVGID_LyRnpK~TWeMn~6rLY~ahvb_2" gradientUnits="userSpaceOnUse" gradientTransform="matrix(1 0 0 1 0 0)" x1="32" y1="6" x2="32" y2="58">
+<stop offset="0%" style="stop-color:rgb(26,109,255);stop-opacity: 1"/>
+<stop offset="100%" style="stop-color:rgb(200,34,255);stop-opacity: 1"/>
+</linearGradient>
+<path style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-dashoffset: 0; stroke-linejoin: miter; stroke-miterlimit: 4; fill: url(#SVGID_LyRnpK~TWeMn~6rLY~ahvb_2); fill-rule: nonzero; opacity: 1;" transform=" translate(-32, -32)" d="M 53.092 14.527 L 45.197 6.85 C 44.633 6.302 43.891 6 43.105 6 L 23 6 C 21.346 6 20 7.346 20 9 L 20 14 L 13 14 C 11.346 14 10 15.346 10 17 L 10 55 C 10 56.653999999999996 11.346 58 13 58 L 41 58 C 42.653999999999996 58 44 56.653999999999996 44 55 L 44 50 L 51 50 C 52.653999999999996 50 54 48.653999999999996 54 47 L 54 16.678 C 54 15.871 53.669 15.088 53.092 14.527 z M 45 9.448 L 50.709 15 L 46 15 C 45.449 15 45 14.552 45 14 L 45 9.448 z M 51 48 L 44 48 L 42 48 L 23 48 C 22.449 48 22 47.552 22 47 L 22 24 L 20 24 L 20 47 C 20 48.653999999999996 21.346 50 23 50 L 42 50 L 42 55 C 42 55.552 41.551 56 41 56 L 13 56 C 12.449 56 12 55.552 12 55 L 12 17 C 12 16.448 12.449 16 13 16 L 20 16 L 21.917 16 L 22 16 L 22 9 C 22 8.448 22.449 8 23 8 L 43 8 L 43 14 C 43 15.654 44.346000000000004 17 46 17 L 52 17 L 52 47 C 52 47.552 51.551 48 51 48 z" stroke-linecap="round" />
+</g>
+</g>
+</g>
+</svg>
