@@ -1,0 +1,24 @@
+{
+  "manifest_version": 3,
+  "name": "GitLab File Path Copy",
+  "version": "1.0",
+  "description": "Adds a copy button to GitLab merge request diff files",
+  "permissions": [
+    "clipboardWrite"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "*://gitlab.internal.tripleten.com/*/merge_requests/*/diffs*"
+      ],
+      "js": ["content.js"],
+      "css": ["styles.css"],
+      "run_at": "document_idle"
+    }
+  ],
+  "icons": {
+    "16": "icon16.png",
+    "48": "icon48.png",
+    "128": "icon128.png"
+  }
+}

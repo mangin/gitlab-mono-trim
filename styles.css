@@ -1,0 +1,28 @@
+.gitlab-copy-path-btn {
+  padding: 6px 12px;
+  margin-left: 10px;
+  background-color: #1f75cb;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 500;
+  transition: background-color 0.2s ease;
+}
+
+.gitlab-copy-path-btn:hover {
+  background-color: #1068bf;
+}
+
+.gitlab-copy-path-btn:active {
+  background-color: #0d5aa7;
+}
+
+.gitlab-copy-path-btn.copied {
+  background-color: #2da160;
+}
+
+.gitlab-copy-path-btn.copied:hover {
+  background-color: #24914f;
+}
