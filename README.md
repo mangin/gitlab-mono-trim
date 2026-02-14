@@ -1,23 +1,23 @@
-# GitLab MonoTrim Chrome Extension
+# ✂️ GitLab MonoTrim Chrome Extension
 
 <p align="center">
   <img src="assets/icon128.png" alt="GitLab Copy Path Extension" width="128" height="128">
 </p>
 
-## Calling all monorepo lovers!
+## 💝 Calling all monorepo lovers!
 
-We all love our monorepo… but let's be honest — GitLab's absolute paths in MRs can be a little painful.
+We all love our monorepo… but let's be honest — GitLab's absolute paths in MRs can be a little painful. 😅
 
 Usually, we're working inside a specific repo, like `services/x`, but when we copy paths from GitLab MR, we get the full absolute path. That means:
-- Copy-paste fails 
-- Extra editing to remove the `services/x` prefix 
-- Reviewing + quick fixes = painful 
+- ❌ Copy-paste fails 
+- ✏️ Extra editing to remove the `services/x` prefix 
+- 😤 Reviewing + quick fixes = painful 
 
-After suffering through this myself, I decided: **enough is enough!** I made a tiny Chrome extension to magically turn absolute paths into relative paths, making reviews and fixes a breeze.
+After suffering through this myself, I decided: **enough is enough!** 💪 I made a tiny Chrome extension to magically turn absolute paths into relative paths, making reviews and fixes a breeze. ✨
 
-Say goodbye to path frustration and hello to faster reviews!
+Say goodbye to path frustration and hello to faster reviews! 🎉
 
-## Features
+## ✨ Features
 
 - Automatically activates on GitLab merge request diff pages
 - Adds a copy button with icon to each file header
@@ -26,9 +26,9 @@ Say goodbye to path frustration and hello to faster reviews!
 - Works with any GitLab instance (gitlab.com, self-hosted, etc.)
 - No runtime configuration needed - everything is set during build
 
-## Installation
+## 📦 Installation
 
-### 1. Build the Extension
+### 1. 🔨 Build the Extension
 
 Clone this repository and run the build script:
 
@@ -46,7 +46,7 @@ You'll be prompted to enter:
   - Default: `^services/[^/]+/`
   - This is a regex pattern that will be applied to file paths
 
-### 2. Load in Chrome
+### 2. 🚀 Load in Chrome
 
 1. Open Chrome and navigate to `chrome://extensions/`
 2. Enable "Developer mode" (toggle in top-right)
@@ -54,14 +54,14 @@ You'll be prompted to enter:
 4. Select the `gitlab-mono-x` directory
 5. The extension is now installed!
 
-## Usage
+## 🎯 Usage
 
 1. Navigate to any GitLab merge request diff page on your configured domain
 2. Look for the copy button (with copy icon) in each file header
 3. Click the button to copy the processed file path to your clipboard
 4. The button will turn green for 2 seconds as confirmation
 
-## Rebuilding
+## 🔄 Rebuilding
 
 To change the GitLab domain or path pattern:
 
@@ -75,7 +75,7 @@ Enter your new domain and pattern when prompted. After rebuilding, reload the ex
 
 **Note:** This extension does not have a settings UI. All configuration is done at build time.
 
-## File Path Processing
+## 📂 File Path Processing
 
 The extension uses a regex pattern configured during build to remove path prefixes:
 
@@ -92,7 +92,7 @@ The extension uses a regex pattern configured during build to remove path prefix
 - `^(frontend|backend)/` - Removes "frontend/" or "backend/"
 - `^[^/]+/` - Removes the first directory level
 
-## Project Structure
+## 🏗️ Project Structure
 
 ```
 gitlab-mono-x/
@@ -109,7 +109,7 @@ gitlab-mono-x/
     └── styles.css
 ```
 
-## Development
+## 🛠️ Development
 
 ### Requirements
 
@@ -132,7 +132,7 @@ Templates use placeholders that are replaced during build:
 
 Generated files (`manifest.json`, `src/content.js`) are not tracked in git (see `.gitignore`).
 
-## License
+## 📄 License
 
 MIT License - see [LICENSE](LICENSE) file for details.
 
