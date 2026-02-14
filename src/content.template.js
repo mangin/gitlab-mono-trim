@@ -19,8 +19,8 @@ async function processFilePath(filePath) {
       }
     }
     
-    // Return original path if no pattern matched
-    return filePath;
+    // Return empty path if no pattern matched
+    return '';
   } catch (error) {
     console.error('Error processing file path:', error);
     return filePath;
